@@ -20,28 +20,29 @@ struct Card : Equatable
         return lhs.color == rhs.color && lhs.number == rhs.number && lhs.shading == rhs.shading && lhs.symbol == rhs.symbol
     }
     
-    enum Symbol : String
+    enum Symbol : String, CaseIterable
     {
         case circle = "●"
         case square = "■"
         case triangle = "▲"
+
     }
     
-    enum Number
+    enum Number : Int, CaseIterable
     {
-        case one
-        case two
-        case three
+        case one = 1
+        case two = 2
+        case three = 3
     }
     
-    enum Shading
+    enum Shading: CaseIterable
     {
         case striped
         case solid
         case open
     }
     
-    enum Color
+    enum Color: CaseIterable
     {
         case red
         case yellow
